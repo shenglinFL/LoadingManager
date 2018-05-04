@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/shenglinFL/LoadingManager"
   s.license      = "MIT"
-  s.author             = { "linsheng" => "linsheng77777@163.com" }
-  s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/shenglinFL/LoadingManager.git", :tag => "#{s.version}" }
-  s.source_files  = "LoadingManager/*.swift"
+  s.author       = { "linsheng" => "linsheng77777@163.com" }
+  s.platform     = :ios, "9.0"
+  s.source       = {:git => "https://github.com/shenglinFL/LoadingManager.git", :tag => "#{s.version}" }
+  s.source_files = "LoadingManager/*.*"
   s.requires_arc = true
+  s.frameworks   = "UIKit"
 
   s.swift_version = '4.0'
 
-  # s.dependency "JSONKit", "~> 1.4"
   s.dependency "SnapKit", "~> 4.0"
 end
