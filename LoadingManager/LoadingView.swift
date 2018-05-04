@@ -21,7 +21,7 @@ class LoadingView: UIView {
     private let _animateImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.animationImages = LoadingManager.loadingImages
-        imageView.animationDuration = 1.2
+        imageView.animationDuration = LoadingManager.loadingAnimationDuration
         imageView.contentMode = .center
         imageView.image = LoadingManager.loadingDefaultImage
         return imageView

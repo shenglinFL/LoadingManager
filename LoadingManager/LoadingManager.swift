@@ -16,23 +16,25 @@ public enum LoadingState {
 
 public class LoadingManager: NSObject {
     
-    public static var loadingImages: [UIImage]?
-    public static var loadingDefaultImage: UIImage?
-    public static var loadingBackgroundImage: UIImage?
+    static var loadingImages: [UIImage]?
+    static var loadingDefaultImage: UIImage?
+    static var loadingBackgroundImage: UIImage?
+    static var loadingAnimationDuration: TimeInterval = 0.0
     
-    public static var loadFailedImage: UIImage?
-    public static var loadFailedTitle: String?
-    public static var loadFailedContent: String?
+    static var loadFailedImage: UIImage?
+    static var loadFailedTitle: String?
+    static var loadFailedContent: String?
     
     public static var backgroundColor: UIColor = .white
     public static var loadFailedTitleColor: UIColor = .black
     public static var loadFailedContentColor: UIColor = .black
     
     
-    public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?) {
+    public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?, loadingAnimationDuration: TimeInterval = 0.0) {
         LoadingManager.loadingImages = loadingImages
         LoadingManager.loadingDefaultImage = loadingDefaultImage
         LoadingManager.loadingBackgroundImage = loadingBackgroundImage
+        LoadingManager.loadingAnimationDuration = loadingAnimationDuration
     }
     
     public static func setLoadFailedConfig(image: UIImage?, title: String?, content: String?) {

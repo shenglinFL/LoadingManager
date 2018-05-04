@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             images.append(UIImage(named: "img_loading_\(i)")!)
         }
         
-        LoadingManager.setLoadingConfig(loadingImages: images, loadingDefaultImage: UIImage(named: "img_loading_0")!, loadingBackgroundImage: nil)
+        LoadingManager.setLoadingConfig(loadingImages: images, loadingDefaultImage: UIImage(named: "img_loading_0")!, loadingBackgroundImage: nil, loadingAnimationDuration: 0.4)
         LoadingManager.setLoadFailedConfig(image: nil, title: "Failed", content: "tap to refresh")
         LoadingManager.loadFailedContentColor = .red
         LoadingManager.backgroundColor = .blue
