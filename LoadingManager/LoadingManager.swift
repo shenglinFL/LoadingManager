@@ -8,25 +8,25 @@
 
 import UIKit
 
-enum LoadingState {
+public enum LoadingState {
     case normal
     case loading
     case failure
 }
 
-class LoadingManager: NSObject {
+public class LoadingManager: NSObject {
     
-    static var loadingImages: [UIImage]?
-    static var loadingDefaultImage: UIImage?
-    static var loadingBackgroundImage: UIImage?
+    public static var loadingImages: [UIImage]?
+    public static var loadingDefaultImage: UIImage?
+    public static var loadingBackgroundImage: UIImage?
     
-    static var loadFailedImage: UIImage?
-    static var loadFailedTitle: String?
-    static var loadFailedContent: String?
+    public static var loadFailedImage: UIImage?
+    public static var loadFailedTitle: String?
+    public static var loadFailedContent: String?
     
-    static var backgroundColor: UIColor = .white
-    static var loadFailedTitleColor: UIColor = .black
-    static var loadFailedContentColor: UIColor = .black
+    public static var backgroundColor: UIColor = .white
+    public static var loadFailedTitleColor: UIColor = .black
+    public static var loadFailedContentColor: UIColor = .black
     
     
     public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?) {

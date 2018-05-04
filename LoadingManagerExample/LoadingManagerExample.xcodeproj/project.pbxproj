@@ -12,11 +12,6 @@
 		3C87320A209C398F0060DB2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C873208209C398F0060DB2E /* Main.storyboard */; };
 		3C87320C209C39920060DB2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C87320B209C39920060DB2E /* Assets.xcassets */; };
 		3C87320F209C39920060DB2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C87320D209C39920060DB2E /* LaunchScreen.storyboard */; };
-		3C873227209C3FEC0060DB2E /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C873222209C3FEC0060DB2E /* LoadingManager.swift */; };
-		3C873228209C3FEC0060DB2E /* LoadFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C873223209C3FEC0060DB2E /* LoadFailedView.swift */; };
-		3C873229209C3FEC0060DB2E /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C873224209C3FEC0060DB2E /* UIView+Loading.swift */; };
-		3C87322A209C3FEC0060DB2E /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C873225209C3FEC0060DB2E /* UIViewController+Loading.swift */; };
-		3C87322B209C3FEC0060DB2E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C873226209C3FEC0060DB2E /* LoadingView.swift */; };
 		3C87322D209C3FFF0060DB2E /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87322C209C3FFF0060DB2E /* DemoViewController.swift */; };
 		EFA551DBDCF25C8BF3854CB6 /* Pods_LoadingManagerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D893537621FCD269B441FB43 /* Pods_LoadingManagerExample.framework */; };
 /* End PBXBuildFile section */
@@ -31,11 +26,6 @@
 		3C87320B209C39920060DB2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C87320E209C39920060DB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C873210209C39920060DB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C873222209C3FEC0060DB2E /* LoadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
-		3C873223209C3FEC0060DB2E /* LoadFailedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadFailedView.swift; sourceTree = "<group>"; };
-		3C873224209C3FEC0060DB2E /* UIView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
-		3C873225209C3FEC0060DB2E /* UIViewController+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
-		3C873226209C3FEC0060DB2E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3C87322C209C3FFF0060DB2E /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		D893537621FCD269B441FB43 /* Pods_LoadingManagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoadingManagerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,26 +66,12 @@
 				3C873204209C398F0060DB2E /* AppDelegate.swift */,
 				3C873206209C398F0060DB2E /* ViewController.swift */,
 				3C87322C209C3FFF0060DB2E /* DemoViewController.swift */,
-				3C873221209C3FEC0060DB2E /* LoadingManager */,
 				3C873208209C398F0060DB2E /* Main.storyboard */,
 				3C87320B209C39920060DB2E /* Assets.xcassets */,
 				3C87320D209C39920060DB2E /* LaunchScreen.storyboard */,
 				3C873210209C39920060DB2E /* Info.plist */,
 			);
 			path = LoadingManagerExample;
-			sourceTree = "<group>";
-		};
-		3C873221209C3FEC0060DB2E /* LoadingManager */ = {
-			isa = PBXGroup;
-			children = (
-				3C873222209C3FEC0060DB2E /* LoadingManager.swift */,
-				3C873223209C3FEC0060DB2E /* LoadFailedView.swift */,
-				3C873224209C3FEC0060DB2E /* UIView+Loading.swift */,
-				3C873225209C3FEC0060DB2E /* UIViewController+Loading.swift */,
-				3C873226209C3FEC0060DB2E /* LoadingView.swift */,
-			);
-			name = LoadingManager;
-			path = ../../LoadingManager;
 			sourceTree = "<group>";
 		};
 		586F9F37BF2C03E811CD9420 /* Pods */ = {
@@ -230,12 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C873207209C398F0060DB2E /* ViewController.swift in Sources */,
-				3C87322A209C3FEC0060DB2E /* UIViewController+Loading.swift in Sources */,
-				3C873229209C3FEC0060DB2E /* UIView+Loading.swift in Sources */,
 				3C873205209C398F0060DB2E /* AppDelegate.swift in Sources */,
-				3C873227209C3FEC0060DB2E /* LoadingManager.swift in Sources */,
-				3C87322B209C3FEC0060DB2E /* LoadingView.swift in Sources */,
-				3C873228209C3FEC0060DB2E /* LoadFailedView.swift in Sources */,
 				3C87322D209C3FFF0060DB2E /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +355,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2AK8HMU4Y;
 				INFOPLIST_FILE = LoadingManagerExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xrj.linsheng.demo.LoadingManagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -400,7 +374,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2AK8HMU4Y;
 				INFOPLIST_FILE = LoadingManagerExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xrj.linsheng.demo.LoadingManagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import LoadingManager
 class DemoViewController: UIViewController {
 
     override func viewDidLoad() {

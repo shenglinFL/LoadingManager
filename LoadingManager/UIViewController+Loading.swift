@@ -8,22 +8,22 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
-    func setLoadingSuccess() {
+    public func setLoadingSuccess() {
         LoadingManager.setLoadingSuccess(inView: self.view)
     }
     
-    func setLoadingStart() {
+    public func setLoadingStart() {
         LoadingManager.setLoadingStart(inView: self.view)
     }
     
-    func setLoadingFailed(retryHandle: (() -> Void)?) {
+    public func setLoadingFailed(retryHandle: (() -> Void)?) {
         LoadingManager.setLoadingFailed(inView: self.view, retryHandle: retryHandle)
     }
     
     @discardableResult
-    func setLoadingFailedIfIsLoading(retryHandle: (() -> Void)?) -> Bool {
+    public func setLoadingFailedIfIsLoading(retryHandle: (() -> Void)?) -> Bool {
         return LoadingManager.setLoadingFailedIfIsLoading(inView: self.view, retryHandle: retryHandle)
     }
 }
