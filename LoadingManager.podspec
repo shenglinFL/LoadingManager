@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author             = { "linsheng" => "linsheng77777@163.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/shenglinFL/LoadingManager.git", :tag => "#{s.version}" }
-  s.source_files  = "LoadingManager", "LoadingManager/**/*.*"
+  s.source_files  = "LoadingManager", "LoadingManager/*.swift"
   s.requires_arc = true
 
   s.swift_version = '4.0'
