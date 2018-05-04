@@ -6,7 +6,7 @@
 //  Copyright © 2018年 XRJ. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIView {
     
@@ -22,6 +22,7 @@ extension UIView {
         LoadingManager.setLoadingFailed(inView: self, retryHandle: retryHandle)
     }
     
+    @discardableResult
     func setLoadingFailedIfIsLoading(retryHandle: (() -> Void)?) -> Bool {
         return LoadingManager.setLoadingFailedIfIsLoading(inView: self, retryHandle: retryHandle)
     }

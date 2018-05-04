@@ -24,6 +24,10 @@ class LoadingManager: NSObject {
     static var loadFailedTitle: String?
     static var loadFailedContent: String?
     
+    static var backgroundColor: UIColor = .white
+    static var loadFailedTitleColor: UIColor = .black
+    static var loadFailedContentColor: UIColor = .black
+    
     
     public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?) {
         LoadingManager.loadingImages = loadingImages
@@ -86,6 +90,7 @@ class LoadingManager: NSObject {
     ///   - inView: UIView
     ///   - retryHandle: 点击刷新回调
     /// - Returns: 是否显示失败视图
+    @discardableResult
     static func setLoadingFailedIfIsLoading(inView: UIView, retryHandle: (() -> Void)?) -> Bool {
         if LoadingManager.isLoading(inView: inView) {
             LoadingManager.setLoadingFailed(inView: inView, retryHandle: retryHandle)

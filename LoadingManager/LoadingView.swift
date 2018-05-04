@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 enum LoadingViewType {
     case normal // same as theme
@@ -49,7 +50,7 @@ class LoadingView: UIView {
             make.centerY.equalToSuperview().offset(-50)
         }
         
-        self.backgroundColor = UIColor.appBackgroundColor
+        self.backgroundColor = LoadingManager.backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChameleonFramework
 
 class LoadFailedView: UIView {
     
@@ -21,7 +20,7 @@ class LoadFailedView: UIView {
     /// 标题
     private let _failedTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = HexColor("999999")!
+        label.textColor = LoadingManager.loadFailedTitleColor
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -29,7 +28,7 @@ class LoadFailedView: UIView {
     /// 详情
     private let _failedContentLabel: UILabel = { // MARK: 暂未使用到
         let label = UILabel()
-        label.textColor = HexColor("999999")!
+        label.textColor = LoadingManager.loadFailedContentColor
         label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
@@ -43,7 +42,7 @@ class LoadFailedView: UIView {
     init(title: String? = LoadingManager.loadFailedTitle, content: String? = LoadingManager.loadFailedContent, canTouchRefresh: Bool = true) {
         super.init(frame: CGRect.zero)
         
-        self.backgroundColor = UIColor.appBackgroundColor
+        self.backgroundColor = LoadingManager.backgroundColor
         let tap = UITapGestureRecognizer(target: self, action: #selector(retry))
         self.addGestureRecognizer(tap)
         
