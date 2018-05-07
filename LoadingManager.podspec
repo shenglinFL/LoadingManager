@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LoadingManager"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Loading helper"
   s.description  = <<-DESC
                         Loading helper!
