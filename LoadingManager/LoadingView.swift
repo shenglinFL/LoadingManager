@@ -77,20 +77,19 @@ class LoadingView: UIView {
         }
     }
     
-    static func hideLoadingWithAnimation(inView: UIView, animated: Bool = false)  {
+    static func hideLoadingWithAnimation(inView: UIView, animated: Bool = false, withDuration: TimeInterval = 0.3)  {
         if let loadingView = LoadingView.loading(inView: inView) {
             if animated {
-                loadingView.hideLoadingWithAnimation()
+                loadingView.hideLoadingWithAnimation(withDuration: withDuration)
             }else {
                 loadingView.hideLoadingNoAnimation()
             }
-            
         }
     }
     
-    func hideLoadingWithAnimation() {
+    func hideLoadingWithAnimation(withDuration: TimeInterval = 0.3) {
         self.alpha = 1.0
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: withDuration, animations: {
             self.alpha = 0
         }) { (finished) in
             self.hideLoadingNoAnimation()

@@ -10,8 +10,8 @@ import UIKit
 
 public extension UIViewController {
     
-    public func setLoadingSuccess() {
-        LoadingManager.setLoadingSuccess(inView: self.view)
+    public func setLoadingSuccess(animated: Bool = false, withDuration: TimeInterval = 0.3) {
+        LoadingManager.setLoadingSuccess(inView: self.view, animated: animated, withDuration: withDuration)
     }
     
     public func setLoadingStart() {

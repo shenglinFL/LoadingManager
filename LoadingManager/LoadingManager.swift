@@ -15,9 +15,9 @@ public enum LoadingState {
 }
 
 public class LoadingManager: NSObject {
-    
+
     static var loadingImages: [UIImage]?
-    static var loadingDefaultImage: UIImage?
+    static var loadingDefaultImage: UIImage? // 家长动图展位图(iOS10以下动图禁止时显示）
     static var loadingBackgroundImage: UIImage?
     static var loadingAnimationDuration: TimeInterval = 0.0
     
@@ -28,6 +28,7 @@ public class LoadingManager: NSObject {
     public static var backgroundColor: UIColor = .white
     public static var loadFailedTitleColor: UIColor = .black
     public static var loadFailedContentColor: UIColor = .black
+    
     
     
     public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?, loadingAnimationDuration: TimeInterval = 0.0) {
@@ -62,8 +63,8 @@ public class LoadingManager: NSObject {
     /// 结束Loading（成功）
     ///
     /// - Parameter inView: UIView
-    public static func setLoadingSuccess(inView: UIView) {
-        LoadingView.hideLoadingWithAnimation(inView: inView, animated: false)
+    public static func setLoadingSuccess(inView: UIView, animated: Bool = false, withDuration: TimeInterval = 0.3) {
+        LoadingView.hideLoadingWithAnimation(inView: inView, animated: animated, withDuration: withDuration)
         LoadFailedView.hideLoadFailedViewNoAnimation(inView: inView)
     }
     
