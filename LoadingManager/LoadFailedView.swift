@@ -127,6 +127,9 @@ class LoadFailedView: UIView {
     }
     
     private func showFailedView(inView: UIView){
+        if LoadFailedView.loadFailedView(forView: inView) != nil {
+            return
+        }
         if self.superview != inView {
             self.removeFromSuperview()
             inView.addSubview(self)

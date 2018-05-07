@@ -10,20 +10,20 @@ import UIKit
 
 extension UIView {
     
-    func setLoadingSuccess() {
+    public func setLoadingSuccess() {
         LoadingManager.setLoadingSuccess(inView: self)
     }
     
-    func setLoadingStart() {
+    public func setLoadingStart() {
         LoadingManager.setLoadingStart(inView: self)
     }
     
-    func setLoadingFailed(retryHandle: (() -> Void)?) {
+    public func setLoadingFailed(retryHandle: (() -> Void)?) {
         LoadingManager.setLoadingFailed(inView: self, retryHandle: retryHandle)
     }
     
     @discardableResult
-    func setLoadingFailedIfIsLoading(retryHandle: (() -> Void)?) -> Bool {
+    public func setLoadingFailedIfIsLoading(retryHandle: (() -> Void)?) -> Bool {
         return LoadingManager.setLoadingFailedIfIsLoading(inView: self, retryHandle: retryHandle)
     }
 }

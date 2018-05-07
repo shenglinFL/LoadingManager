@@ -93,7 +93,7 @@ public class LoadingManager: NSObject {
     ///   - retryHandle: 点击刷新回调
     /// - Returns: 是否显示失败视图
     @discardableResult
-    static func setLoadingFailedIfIsLoading(inView: UIView, retryHandle: (() -> Void)?) -> Bool {
+    public static func setLoadingFailedIfIsLoading(inView: UIView, retryHandle: (() -> Void)?) -> Bool {
         if LoadingManager.isLoading(inView: inView) {
             LoadingManager.setLoadingFailed(inView: inView, retryHandle: retryHandle)
             return true
@@ -105,7 +105,7 @@ public class LoadingManager: NSObject {
     ///
     /// - Parameter inView: UIView
     /// - Returns: 是否在Loading
-    static func isLoading(inView: UIView) -> Bool{
+    public static func isLoading(inView: UIView) -> Bool{
         return LoadingView.isLoading(inView: inView)
     }
 }

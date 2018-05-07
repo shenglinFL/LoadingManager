@@ -63,6 +63,9 @@ class LoadingView: UIView {
     }
     
     func showLoading(inView: UIView, type: LoadingViewType) {
+        if LoadingView.loading(inView: inView) != nil {
+            return
+        }
         if self.superview != inView {
             self.removeFromSuperview()
             inView.addSubview(self)
