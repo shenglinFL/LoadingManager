@@ -28,8 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         LoadingManager.setLoadingConfig(loadingImages: images, loadingDefaultImage: UIImage(named: "img_loading_0")!, loadingBackgroundImage: nil, loadingAnimationDuration: 0.4)
-        LoadingManager.setLoadFailedConfig(image: nil, title: "Failed", content: "tap to refresh")
-        LoadingManager.loadFailedContentColor = .red
+        let title = NSAttributedString(string: "Failed", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 30)])
+        let content = NSAttributedString(string: "Tap to refresh", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20)])
+        LoadingManager.setLoadFailedConfig(image: nil, title: title, content: content)
         LoadingManager.backgroundColor = .blue
         
         return true

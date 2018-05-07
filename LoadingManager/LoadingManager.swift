@@ -22,15 +22,12 @@ public class LoadingManager: NSObject {
     static var loadingAnimationDuration: TimeInterval = 0.0
     
     static var loadFailedImage: UIImage?
-    static var loadFailedTitle: String?
-    static var loadFailedContent: String?
+
+    static var loadFailedTitleText: NSAttributedString?
+    static var loadFailedContentText: NSAttributedString?
     
     public static var backgroundColor: UIColor = .white
-    public static var loadFailedTitleColor: UIColor = .black
-    public static var loadFailedContentColor: UIColor = .black
-    
-    
-    
+
     public static func setLoadingConfig(loadingImages: [UIImage]?, loadingDefaultImage: UIImage?, loadingBackgroundImage: UIImage?, loadingAnimationDuration: TimeInterval = 0.0) {
         LoadingManager.loadingImages = loadingImages
         LoadingManager.loadingDefaultImage = loadingDefaultImage
@@ -38,13 +35,13 @@ public class LoadingManager: NSObject {
         LoadingManager.loadingAnimationDuration = loadingAnimationDuration
     }
     
-    public static func setLoadFailedConfig(image: UIImage?, title: String?, content: String?) {
+    public static func setLoadFailedConfig(image: UIImage?, title: NSAttributedString?, content: NSAttributedString?) {
         LoadingManager.loadFailedImage = image
-        LoadingManager.loadFailedTitle = title
-        LoadingManager.loadFailedContent = content
+        LoadingManager.loadFailedTitleText = title
+        LoadingManager.loadFailedContentText = content
     }
     
-    private func setLoadingState(inView: UIView ,state: LoadingState) {
+    private func setLoadingState(inView: UIView ,state: LoadingState) { // 弃用
         switch state {
         case .normal:
             LoadingView.showLoading(inView: inView, type: .normal)
@@ -58,7 +55,6 @@ public class LoadingManager: NSObject {
             LoadFailedView.showLoadFailedView(inView: inView, retryHandle: nil)
         }
     }
-    
     
     /// 结束Loading（成功）
     ///

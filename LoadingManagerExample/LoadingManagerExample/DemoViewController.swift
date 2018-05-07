@@ -29,7 +29,7 @@ class DemoViewController: UIViewController {
     private func retry() {
         self.setLoadingStart()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.setLoadingSuccess()
+            self.setLoadingSuccess(animated: true, withDuration: 0.3)
         }
     }
 
