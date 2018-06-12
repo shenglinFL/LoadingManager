@@ -8,6 +8,8 @@
 
 import UIKit
 
+public typealias LoadingManagerFailedRetryHandle = () -> Void
+
 class LoadFailedView: UIView {
     
     /// 图片
@@ -31,7 +33,7 @@ class LoadFailedView: UIView {
     
     private var _canTouchRefresh: Bool = true
     
-    private var _retryHandler: (() -> Void)?
+    private var _retryHandler: LoadingManagerFailedRetryHandle?
     
     private let _contentView = UIView()
     
@@ -77,12 +79,12 @@ class LoadFailedView: UIView {
         _retryHandler?()
     }
     
-    static func showLoadFailedView(inView: UIView, retryHandle: (() -> Void)?) {
+    static func showLoadFailedView(inView: UIView, retryHandle: LoadingManagerFailedRetryHandle?) {
         let loadFailedView = LoadFailedView()
         loadFailedView.showLoadFailedView(inView: inView, retryHandle: retryHandle)
     }
     
-    func showLoadFailedView(inView: UIView, retryHandle: (() -> Void)?) {
+    func showLoadFailedView(inView: UIView, retryHandle: LoadingManagerFailedRetryHandle?) {
         _retryHandler = retryHandle
         showFailedView(inView: inView)
     }

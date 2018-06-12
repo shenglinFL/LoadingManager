@@ -72,27 +72,35 @@ public class LoadingManager: NSObject {
         LoadingView.showLoading(inView: inView, type: .normal)
     }
     
-    /// 结束Loading（失败）
+    /// 结束Loading（失败）. 当有retryHandle，且retryHandle != nil时，执行retryHandle。否则执行inView的loadingRetryHandle属性block
     ///
     /// - Parameters:
     ///   - inView: UIView
     ///   - retryHandle: 点击刷新回调
-    public static func setLoadingFailed(inView: UIView, retryHandle: (() -> Void)?) {
+    public static func setLoadingFailed(inView: UIView, retryHandle: LoadingManagerFailedRetryHandle? = nil) {
         LoadingView.hideLoadingWithAnimation(inView: inView)
         // 添加失败页
-        LoadFailedView.showLoadFailedView(inView: inView, retryHandle: retryHandle)
+        if (retryHandle != nil) {
+            LoadFailedView.showLoadFailedView(inView: inView, retryHandle: retryHandle)
+            return
+        }
+        LoadFailedView.showLoadFailedView(inView: inView, retryHandle: inView.loadingRetryHandle)
     }
     
-    /// 当在Loading时，显示失败视图，否则不显示失败视图
+    /// 当在Loading时，显示失败视图，否则不显示失败视图. 当有retryHandle，且retryHandle != nil时，执行retryHandle。否则执行inView的loadingRetryHandle属性block
     ///
     /// - Parameters:
     ///   - inView: UIView
     ///   - retryHandle: 点击刷新回调
     /// - Returns: 是否显示失败视图
     @discardableResult
-    public static func setLoadingFailedIfIsLoading(inView: UIView, retryHandle: (() -> Void)?) -> Bool {
+    public static func setLoadingFailedIfIsLoading(inView: UIView, retryHandle: LoadingManagerFailedRetryHandle? = nil) -> Bool {
         if LoadingManager.isLoading(inView: inView) {
-            LoadingManager.setLoadingFailed(inView: inView, retryHandle: retryHandle)
+            if (retryHandle != nil) {
+                LoadFailedView.showLoadFailedView(inView: inView, retryHandle: retryHandle)
+                return true
+            }
+            LoadFailedView.showLoadFailedView(inView: inView, retryHandle: inView.loadingRetryHandle)
             return true
         }
         return false

@@ -19,10 +19,18 @@ class DemoViewController: UIViewController {
         self.setLoadingStart()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.setLoadingFailedIfIsLoading(retryHandle: { [weak self] in
+            
+            // 使用retryHandle
+            //self.setLoadingFailedIfIsLoading(retryHandle: { [weak self] in
+            //    guard let strongSelf = self else { return }
+            //    strongSelf.retry()
+            //})
+            // 使用loadingRetryHandle属性
+            self.loadingRetryHandle = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.retry()
-            })
+            }
+            self.setLoadingFailedIfIsLoading()
         }
     }
     
