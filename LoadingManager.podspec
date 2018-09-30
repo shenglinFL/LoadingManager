@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LoadingManager"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Loading helper"
   s.description  = <<-DESC
                         Loading helper!
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks   = "UIKit"
 
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
   s.dependency "SnapKit", "~> 4.0"
 end

@@ -130,7 +130,7 @@ class LoadFailedView: UIView {
         if self.superview != inView {
             self.removeFromSuperview()
             inView.addSubview(self)
-            inView.bringSubview(toFront: self)
+            inView.bringSubviewToFront(self)
             self.frame = inView.bounds
         }
     }
